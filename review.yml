@@ -1,0 +1,95 @@
+aid: iheartjane
+name: Jane (iHeartJane)
+review:
+  question: Does iHeartJane expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-03'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. Jane's documented developer surfaces are the
+    Jane API (a Swagger-published HTTP API for menu products and access tokens) and
+    the Jane DM SDK (a TypeScript/JavaScript library that embeds personalization and
+    sponsored-product widgets into a retailer's menu). Both are request/response
+    over HTTPS - there is no server-push transport (WebSocket or SSE) documented on
+    Jane's own API to model. Both surfaces are additionally partner-gated behind
+    Cloudflare and account-representative approval, so no live event stream could be
+    confirmed even if one existed.
+findings:
+  summary: |
+    iHeartJane (Jane Technologies) does not publish a documented public WebSocket
+    API. Jane is a cannabis ecommerce and marketplace platform. Its two documented
+    developer surfaces - the Jane API (Swagger UI at
+    api.iheartjane.com/jane-api-docs, for retrieving live store menu products and
+    generating access tokens) and the Jane DM SDK (dm-sdk-docs.iheartjane.com, a
+    TypeScript/JavaScript Digital Merchandising SDK for personalization and
+    monetization widgets) - are both request/response HTTPS surfaces. No realtime,
+    bidirectional, or streaming WebSocket (ws:// or wss://) endpoint is documented.
+    Both surfaces are partner-gated: the Jane API and its docs sit behind Cloudflare
+    bot protection and require issued credentials, and the DM SDK "requires approval
+    from Jane to enable on your menus." Because access is gated, the endpoints
+    recorded for this provider are modeled from Jane's public documentation
+    (endpointsModeled: true) rather than exercised against an open API.
+  accessModel: |
+    Partner-gated. There is no open, self-service, unauthenticated public API. The
+    Jane API is documented via Swagger but requires credentials from a Jane account
+    representative and is served behind Cloudflare (curl requests to
+    api.iheartjane.com return HTTP 403). The Jane DM SDK is provisioned only on
+    approval. Menu integrations for retailers are arranged through Jane for Business
+    and POS partnerships (70+ POS systems), and menus also sync to Leafly and
+    Weedmaps.
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: https://api.iheartjane.com
+      documented: true
+      note: Jane API (Swagger UI at api.iheartjane.com/jane-api-docs) for menu products and access-token generation. Partner-gated behind Cloudflare; endpoints modeled, not exercised.
+    - protocol: SDK
+      scheme: https
+      baseURL: https://dm-sdk-docs.iheartjane.com
+      documented: true
+      note: Jane DM SDK - TypeScript/JavaScript library embedding personalization and sponsored-product widgets. Approval-gated. HTTPS request/response under the hood, no server push documented.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented anywhere in Jane's public developer materials as of the review date.
+  endpointsModeled: true
+  endpointsModeledNote: |
+    The operations below are logical, honestly-modeled surfaces inferred from Jane's
+    public documentation (the jane-api-docs Swagger describes retrieving menu
+    products and generating access tokens; third-party integration write-ups
+    reference menus, products, inventory, and orders). Exact paths, parameters, and
+    schemas could not be confirmed because the API and its docs are gated behind
+    Cloudflare and partner credentials. Treat these as modeled, not verified.
+  endpointsModeledRest:
+    - POST https://api.iheartjane.com/{access-token endpoint} (generate an access token from partner credentials)
+    - GET  https://api.iheartjane.com/{stores endpoint} (list Jane-powered stores / dispensaries)
+    - GET  https://api.iheartjane.com/{store menu products endpoint} (retrieve a store's live menu products, brands, categories, pricing)
+    - GET  https://api.iheartjane.com/{products endpoint} (query the Jane Universal Product Catalog)
+    - GET  https://api.iheartjane.com/{orders/reservations endpoint} (retrieve carts, orders, or reservations)
+sources:
+  - url: https://api.iheartjane.com/jane-api-docs/index.html
+    type: APIReference
+    note: Jane API Swagger UI - documents retrieving menu products and generating access tokens. Served behind Cloudflare; requires credentials.
+  - url: https://dm-sdk-docs.iheartjane.com/docs/api/
+    type: APIReference
+    note: Jane DM SDK reference. Widgets - Recommended Row, Recommended Sort, Top of Menu Row, Cart Topper. Requires approval from Jane.
+  - url: https://dm-sdk-docs.iheartjane.com/docs/app/intro/
+    type: Documentation
+    note: Jane DM SDK getting-started. States the SDK requires approval to enable on a menu.
+  - url: https://www.iheartjane.com/business/integrations
+    type: Documentation
+    note: Jane for Business integrations - 70+ POS systems, Leafly/Weedmaps menu sync, business-intelligence integrations.
+  - url: https://www.linkedin.com/company/jane-technologies-inc
+    type: LinkedIn
+    note: Jane Technologies, Inc. company profile.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket protocol surface exists, and Jane's documented developer surfaces
+    (the Jane API and the Jane DM SDK) are request/response over HTTPS and
+    partner-gated. No AsyncAPI document was created because there is no server-push
+    transport on Jane's own API to model, and access gating prevents confirming one
+    even if it existed. The provider entry records the modeled REST/SDK surfaces
+    with endpointsModeled: true.
