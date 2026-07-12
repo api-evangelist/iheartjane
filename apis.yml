@@ -78,6 +78,8 @@ apis:
     approval from Jane to enable on a menu; initialization identifiers, package
     name, and endpoints are provisioned by a Jane account representative.
 common:
+- type: DomainSecurity
+  url: security/iheartjane-domain-security.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/jane-technologies-inc
 - type: Website
