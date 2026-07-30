@@ -14,7 +14,18 @@ description: Jane Technologies (iHeartJane) is a cannabis ecommerce and marketpl
   and credentials from a Jane account representative - so the endpoints listed here
   are modeled from Jane's public documentation rather than exercised against a
   live, open, unauthenticated API.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/iheartjane.png
 tags:
 - Cannabis
 - Ecommerce
