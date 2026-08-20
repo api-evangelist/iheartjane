@@ -28,6 +28,16 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/iheartjane.png
 tags:
 - Cannabis
+- E-Commerce
+- Marketplace
+- Dispensary
+- Menus
+- Product
+- Retail
+- Point-of-Sale
+- Personalization
+tags_raw:
+- Cannabis
 - Ecommerce
 - Marketplace
 - Dispensary
@@ -43,6 +53,11 @@ apis:
 - aid: iheartjane:iheartjane-menu-products-api
   name: Jane Menu Products API
   tags:
+  - Menus
+  - Product
+  - Catalog
+  - Stores
+  tags_raw:
   - Menu
   - Products
   - Catalog
