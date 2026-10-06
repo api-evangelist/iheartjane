@@ -58,7 +58,7 @@ tags_raw:
 - Point of Sale
 - Personalization
 created: '2026-07-03'
-modified: '2026-07-03'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
 - aid: iheartjane:iheartjane-menu-products-api
@@ -115,6 +115,8 @@ apis:
     approval from Jane to enable on a menu; initialization identifiers, package
     name, and endpoints are provisioned by a Jane account representative.
 common:
+- url: https://www.iheartjane.com/blog/
+  type: Blog
 - type: DomainSecurity
   url: security/iheartjane-domain-security.yml
 - type: LinkedIn
