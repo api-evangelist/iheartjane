@@ -1,0 +1,18 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/iheartjane/integrations
+- https://zapier.com/apps/jane-iheartjane/integrations
+- https://n8n.io/integrations/iheartjane/
+- https://composio.dev/toolkits/iheartjane
+- https://monid.ai/tools/iheartjane
+checked:
+- https://composio.dev/toolkits/iheartjane
+- https://monid.ai/tools/iheartjane
+- https://n8n.io/integrations/iheartjane/
+- https://zapier.com/apps/iheartjane/integrations
+- https://zapier.com/apps/jane-iheartjane/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
