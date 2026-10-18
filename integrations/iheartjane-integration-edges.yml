@@ -1,5 +1,5 @@
 generated: '2026-10-12'
-method: none
+method: searched
 source:
 - https://zapier.com/apps/iheartjane/integrations
 - https://zapier.com/apps/jane-iheartjane/integrations
@@ -10,9 +10,73 @@ checked:
 - https://composio.dev/toolkits/iheartjane
 - https://monid.ai/tools/iheartjane
 - https://n8n.io/integrations/iheartjane/
+- https://www.metrc.com/validated-integrators/
 - https://zapier.com/apps/iheartjane/integrations
 - https://zapier.com/apps/jane-iheartjane/integrations
 summary: null
 marketplace_apps: []
-edges: []
+edges:
+- partner_name: Metrc (validated integrators)
+  partner: null
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.metrc.com/validated-integrators/
+  category: Cannabis track-and-trace
+  contract_reference:
+    register: Metrc Validated Integrators (metrc.com/validated-integrators, admin-ajax fetch_providers)
+    spec_file: null
+    standard: Metrc validated integrator (state cannabis track-and-trace)
+    role: metrc-validated-integrator
+    registered_name: Jane Technologies Inc
+    register_id: Jane Technologies Inc
+    website: https://www.iheartjane.com/
+    matched_domain: iheartjane.com
+    matched_by: domain+verified
+    integrated_with:
+    - Metrc Connect
+    signal_note: certified_products = one entry per STATE with Full or Partial Validation (level kept); Get Access
+      = API access only, participation; Metrc drops lapsed integrators, lapsed never set
+    detected_by: sweep-regulated-retail.py
+    detected: '2026-10-18'
+    certified_products:
+    - product: 'Metrc validated integration: California'
+      state: California
+      level: Full Validation
+    - product: 'Metrc validated integration: Colorado'
+      state: Colorado
+      level: Full Validation
+    - product: 'Metrc validated integration: Illinois'
+      state: Illinois
+      level: Full Validation
+    - product: 'Metrc validated integration: Louisiana'
+      state: Louisiana
+      level: Full Validation
+    - product: 'Metrc validated integration: Maryland'
+      state: Maryland
+      level: Full Validation
+    - product: 'Metrc validated integration: Massachusetts'
+      state: Massachusetts
+      level: Full Validation
+    - product: 'Metrc validated integration: Michigan'
+      state: Michigan
+      level: Full Validation
+    - product: 'Metrc validated integration: Nevada'
+      state: Nevada
+      level: Full Validation
+    - product: 'Metrc validated integration: New Jersey'
+      state: New Jersey
+      level: Full Validation
+    - product: 'Metrc validated integration: Oregon'
+      state: Oregon
+      level: Full Validation
+    - product: 'Metrc validated integration: Rhode Island'
+      state: Rhode Island
+      level: Full Validation
+    verified: Jane Technologies, Inc. operates the Jane cannabis marketplace at iheartjane.com; all/iheartjane is
+      that company (the register's website is iheartjane.com)
+  detected_by: sweep-regulated-retail.py
+  first_seen: '2026-10-18'
 templates: []
