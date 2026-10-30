@@ -1,4 +1,4 @@
-# Jane / iHeartJane (iheartjane)
+# Jane (iHeartJane)
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,93 +64,86 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Jane Technologies (iHeartJane) is a cannabis ecommerce and marketplace platform that powers real-time online menus, point-of-sale and kiosk checkout, order and reservation flows, and the Jane Universal Product Catalog for 2,500+ dispensaries and brands across the United States and Canada. Consumers shop local products in real time at [iheartjane.com](https://www.iheartjane.com); retailers publish menus, run POS, and manage inventory through Jane for Business.
+Jane Technologies (iHeartJane) is a cannabis ecommerce and marketplace platform that powers real-time online menus, point-of-sale and kiosk checkout, order and reservation flows, and the Jane Universal Product Catalog for 2,500+ dispensaries and brands across the United States and Canada. Jane exposes a documented HTTP API (the Jane API, published as Swagger at api.iheartjane.com/jane-api-docs) for retrieving live store menu products and generating access tokens, and a partner Digital Merchandising SDK (Jane DM SDK) for embedding MyHigh-powered personalization and sponsored-product widgets into a retailer's own menu. Both surfaces are partner-gated - access requires approval and credentials from a Jane account representative - so the endpoints listed here are modeled from Jane's public documentation rather than exercised against a live, open, unauthenticated API.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/iheartjane/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/iheartjane/refs/heads/main/apis.yml)
+**Areas:** Cannabis · E-Commerce · Marketplace · Dispensary · Menus · Product · Retail · Point-of-Sale · Personalization
 
-## Access Model (read this first)
+## Jane (iHeartJane) on APIs.io
 
-Jane's developer surfaces are **real but partner-gated**. There is no open, self-service, unauthenticated public API:
+Everything profiled for Jane (iHeartJane) is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/iheartjane/](https://apis.io/providers/iheartjane/)** — or go straight to one of the APIs or properties below.
 
-- **Jane API** — a documented HTTP API published as a Swagger UI at [api.iheartjane.com/jane-api-docs](https://api.iheartjane.com/jane-api-docs/index.html), covering retrieval of live store menu products and generation of access tokens. The docs host and the API itself sit behind Cloudflare bot protection and require credentials issued by a Jane account representative.
-- **Jane DM SDK** — a TypeScript/JavaScript Digital Merchandising SDK documented at [dm-sdk-docs.iheartjane.com](https://dm-sdk-docs.iheartjane.com). It explicitly "requires approval from Jane to enable on your menus." Initialization identifiers, package name, and endpoints are provisioned on approval.
-- **Integrations** — Jane also offers tailored, POS-driven menu integrations (70+ POS systems) and syncs menus to Leafly and Weedmaps, arranged through partnership rather than a public API key.
+### APIs (2)
 
-Because both surfaces are gated behind approval and Cloudflare, the endpoints captured in `apis.yml` are **modeled from Jane's public documentation** (`endpointsModeled: true`) rather than exercised against a live open API. No OpenAPI, pricing, rate-limit, or FinOps artifacts are asserted here, to avoid fabricating a surface that cannot be independently verified.
+- [Jane Menu Products API](https://apis.io/apis/iheartjane/iheartjane-menu-products-api/) — Jane's documented HTTP API (published as a Swagger UI at api.iheartjane.com/jane-api-docs) for retrieving live store menu products and for generating the…
+- [Jane Digital Merchandising SDK (Jane DM SDK)](https://apis.io/apis/iheartjane/iheartjane-digital-merchandising-sdk/) — The Jane DM SDK is a TypeScript/JavaScript library (usable in client-side React/Angular/Vue and server-side Node.js/Express apps) that embeds MyHigh-powered…
 
-## Tags
+### Published properties
 
-- Cannabis
-- Ecommerce
-- Marketplace
-- Dispensary
-- Menu
-- Products
-- Retail
-- Point of Sale
-- Personalization
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## Timestamps
+#### Security (1)
 
-- **Created:** 2026-07-03
-- **Modified:** 2026-07-03
+Authentication, trust centre, and vulnerability disclosure.
 
-## APIs
+- [Iheartjane Domain Security](https://apis.io/security/iheartjane/iheartjane-domain-security/)
 
-### Jane Menu Products API
+## Where to find this API
 
-Jane's documented HTTP API (Swagger UI at `api.iheartjane.com/jane-api-docs`) for retrieving live store menu products and generating the access tokens used to authenticate downstream calls. Surfaces a dispensary's real-time menu, brands, categories, and pricing from the Jane Universal Product Catalog. Partner-gated; operations are modeled from Jane's public documentation.
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-- **Human URL:** [https://api.iheartjane.com/jane-api-docs/index.html](https://api.iheartjane.com/jane-api-docs/index.html)
-- **Base URL:** `https://api.iheartjane.com`
-- **Endpoints modeled:** yes (access-gated)
-
-#### Tags
-
-- Menu
-- Products
-- Catalog
-- Stores
-
-#### Properties
-
-- [API Reference](https://api.iheartjane.com/jane-api-docs/index.html)
-- [Documentation](https://www.iheartjane.com/business/integrations)
-
-### Jane Digital Merchandising SDK (Jane DM SDK)
-
-A TypeScript/JavaScript library (client-side React/Angular/Vue and server-side Node.js/Express) that embeds MyHigh-powered personalization and publisher monetization widgets into a retailer's own menu: a Recommended Row of personalized products, a Recommended Sort for search ranking, a single-brand Top of Menu sponsored row, and a Cart Topper of sponsored and organic recommendations. Requires approval from Jane to enable on a menu.
-
-- **Human URL:** [https://dm-sdk-docs.iheartjane.com/docs/api/](https://dm-sdk-docs.iheartjane.com/docs/api/)
-- **Base URL:** `https://dm-sdk-docs.iheartjane.com`
-- **Endpoints modeled:** yes (approval-gated SDK)
-
-#### Tags
-
-- Personalization
-- Merchandising
-- Advertising
-- Widgets
-- SDK
-
-#### Properties
-
-- [API Reference](https://dm-sdk-docs.iheartjane.com/docs/api/)
-- [Documentation](https://dm-sdk-docs.iheartjane.com/docs/app/intro/)
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/jane-technologies-inc)
 - [Website](https://www.iheartjane.com)
 - [Documentation](https://dm-sdk-docs.iheartjane.com)
-- [Integrations](https://www.iheartjane.com/business/integrations)
-- [Developer Portal](https://api.iheartjane.com/jane-api-docs/index.html)
+- [Blog](https://www.iheartjane.com/blog/)
 
-## Pricing
+## API Evangelist rating
 
-Jane does not publish flat, self-service pricing. Third-party listings describe a quote-based, success/revenue-oriented model for retailers (contact Jane for a tailored quote); there is no public developer-tier price sheet. No `plans/` artifact is asserted here for that reason.
+**Kin Score 9.0** — minimal · rubric 0.24.0 · scored 2026-10-17
 
-## Maintainers
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 0.0 |
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.9** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/iheartjane/](https://apis.io/providers/iheartjane/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Jane (iHeartJane): the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/iheartjane/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
